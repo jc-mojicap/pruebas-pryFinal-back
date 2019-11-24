@@ -1,0 +1,31 @@
+﻿PROYECTO: uniandes, pruebas automatizadas - servicios
+
+DESCRIPCION: 
+
+Proyecto de capa de serivios rest.
+
+ENTORNO DE DESARROLLO:
+
+- Java 8.
+- Spring Boot.
+- Maven.
+
+INSTRUCCIONES TECNICAS
+
+* Ambiente desarrollo:
+
+** Ejecución:
+
+> mvn spring-boot:run
+
+** Ejecución de verificación de estilos:
+
+> mvn checkstyle:checkstyle
+
+** Empaquetar en jar:
+
+> mvn clean compile package
+
+** Generación de JavaDoc
+
+> mvn javadoc:javadoc

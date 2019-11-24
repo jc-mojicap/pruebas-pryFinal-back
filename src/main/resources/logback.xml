@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>    
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">    
+        <encoder>
+            <pattern>%date{ISO8601} %-5level [%thread] %logger [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>    
+    <appender name="FILE-LOG" class="ch.qos.logback.core.FileAppender">
+        <file>application.log</file>
+        <encoder>
+            <pattern>%date{ISO8601} %-5level [%thread] %logger [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE-ERROR" class="ch.qos.logback.core.FileAppender">
+        <file>error.log</file>
+        <encoder>
+            <pattern>%date{ISO8601} %-5level  - %msg%n %nopex</pattern>
+        </encoder>
+    </appender>
+    <appender name="AUDITORIA" class="ch.qos.logback.core.FileAppender">
+        <file>auditoria.log</file>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="ASYNC" class="ch.qos.logback.core.AsyncAppenderBase">
+        <param name="BufferSize" value="500"/>
+        <appender-ref ref="AUDITORIA"/>
+    </appender>            
+    <root level="info">
+        <appender-ref ref="STDOUT" />    
+        <appender-ref ref="FILE-LOG" />      
+    </root>
+    <logger name="edu.uniandes.arquitectura.servicios" level="error">
+        <appender-ref ref="FILE-ERROR" />
+    </logger>    
+    <logger name="edu.uniandes.arquitectura.servicios.service.AuditoriaAspect" level="info" additivity="false">
+        <appender-ref ref="ASYNC" />
+    </logger>            
+</configuration>
