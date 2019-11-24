@@ -13,7 +13,8 @@ nbactions.xml
 /.project
 /.settings/
 /bin/
-
+.idea
+*.iml
 #########
 # Maven #
 #########
