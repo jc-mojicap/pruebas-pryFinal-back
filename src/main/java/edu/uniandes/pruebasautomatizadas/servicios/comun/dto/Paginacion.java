@@ -38,14 +38,7 @@ public class Paginacion implements Serializable {
     public Paginacion(){
         
     } 
-    
-    /**
-     * Constructor.
-     * @param firstResult.
-     * @param maxResults
-     * @param orderBy.
-     * @param orderDesc.
-     */
+
     public Paginacion(Integer firstResult, Integer maxResults,  Integer[] orderBy , Boolean orderDesc){
         this.firstResult = firstResult;
         this.maxResults = maxResults;
@@ -53,13 +46,7 @@ public class Paginacion implements Serializable {
         this.orderDesc = orderDesc;
     }
     
-    /**
-     * Constructor.
-     * @param firstResult.
-     * @param maxResults
-     * @param strOrderBy.
-     * @param orderDesc.
-     */
+
     public Paginacion(Integer firstResult, Integer maxResults,  String[] strOrderBy , Boolean orderDesc){
         this.firstResult = firstResult;
         this.maxResults = maxResults;

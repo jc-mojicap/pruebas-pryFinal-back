@@ -33,8 +33,5 @@
     </root>
     <logger name="edu.uniandes.arquitectura.servicios" level="error">
         <appender-ref ref="FILE-ERROR" />
-    </logger>    
-    <logger name="edu.uniandes.pruebasautomatizadas.servicios.service.AuditoriaAspect" level="info" additivity="false">
-        <appender-ref ref="ASYNC" />
-    </logger>            
+    </logger>
 </configuration>

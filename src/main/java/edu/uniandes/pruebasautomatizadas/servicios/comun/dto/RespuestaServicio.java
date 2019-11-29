@@ -48,10 +48,6 @@ public class RespuestaServicio implements Serializable {
     public String getRespuesta() {
         return respuesta;
     }
-    /**
-     * setRespuesta.
-     * @param respuesta.
-     */
     public void setRespuesta(String respuesta) {
         this.respuesta = respuesta;
     }
@@ -62,10 +58,6 @@ public class RespuestaServicio implements Serializable {
     public boolean isError() {
         return error;
     }
-    /**
-     * setError.
-     * @param error.
-     */
     public void setError(boolean error) {
         this.error = error;
     }
@@ -76,10 +68,6 @@ public class RespuestaServicio implements Serializable {
     public String getCodigoError() {
         return codigoError;
     }
-    /**
-     * setCodigoError.
-     * @param codigoError.
-     */
     public void setCodigoError(String codigoError) {
         this.codigoError = codigoError;
     }
