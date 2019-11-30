@@ -32,16 +32,16 @@ public class Aplicacion implements Serializable {
     @Column(name = "link", nullable = false)
     private String link;
 
-    @Column(name = "version", nullable = false)
+    @Column(name = "version", nullable = true)
     private String version;
 
     @Column(name = "fecha_creacion", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaCreacion;
+    private Date fechaCreacion = new Date();
 
-    @Column(name = "fecha_actualizacion", nullable = false)
+    @Column(name = "fecha_actualizacion", nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaActualizacion;
+    private Date fechaActualizacion = new Date();
 
     @JoinColumn(name = "creado_por", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)

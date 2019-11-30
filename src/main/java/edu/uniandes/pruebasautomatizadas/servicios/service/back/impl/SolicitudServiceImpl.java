@@ -46,7 +46,8 @@ public class SolicitudServiceImpl implements SolicitudService {
         Solicitud response = solicitudRepository.save(solicitud);
         Map<String, String> params = new HashMap<>();
         params.put("NombreAplicacion", solicitud.getPruebas().get(0).getAplicacion().getNombre());
-        params.put("NombreHerramienta", solicitud.getHerramienta().getNombre());
+        params.put("NombreHerramienta", solicitud.getHerramienta().getEjecutor().getEjecutor());
+        params.put("Id", String.valueOf(solicitud.getId()));
         awsSqsUtilities.sendSQSMessage(params,  gson.toJson(response));
         return response;
     }

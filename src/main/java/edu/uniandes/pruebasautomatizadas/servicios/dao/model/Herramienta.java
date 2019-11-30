@@ -29,26 +29,26 @@ public class Herramienta implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private TipoAplicacion tipoAplicacion;
 
-    @Column(name = "link", nullable = false)
+    @Column(name = "link", nullable = true)
     private String link;
 
     @JoinColumn(name = "ejecutor", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     private Ejecutor ejecutor;
 
-    @Column(name = "alto_pantalla", nullable = false)
+    @Column(name = "alto_pantalla", nullable = true)
     private Integer altoPantalla;
 
-    @Column(name = "ancho_pantalla", nullable = false)
+    @Column(name = "ancho_pantalla", nullable = true)
     private Integer anchoPantalla;
 
     @Column(name = "fecha_creacion", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaCreacion;
+    private Date fechaCreacion = new Date();
 
-    @Column(name = "fecha_actualizacion", nullable = false)
+    @Column(name = "fecha_actualizacion", nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaActualizacion;
+    private Date fechaActualizacion = new Date();
 
     @JoinColumn(name = "creado_por", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)

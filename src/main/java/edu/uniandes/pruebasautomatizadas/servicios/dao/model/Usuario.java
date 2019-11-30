@@ -36,7 +36,5 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "nombre_usuario", nullable = false, length = 50)
     private String nombreUsuario;
-    @Column(nullable=false, name="contrasena", length=255)
-    private String contrasena;
 
 }

@@ -37,7 +37,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public Usuario registrarUsuario(Usuario usuarioRegistrar) {
 		Validate.notNull(usuarioRegistrar, "El parámetro usuario no puede ser nulo");
-		Validate.notNull(usuarioRegistrar.getContrasena(), "El parámetro  contraseña no puede ser nulo");
 		Validate.notNull(usuarioRegistrar.getNombreUsuario(), "El parámetro nombre usuario no puede ser nulo");
 		usuarioRepository.save(usuarioRegistrar);
 		
